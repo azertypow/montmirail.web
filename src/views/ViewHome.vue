@@ -22,7 +22,10 @@
         class="v-view-home__tagline-bottom font-small font-strong"
         v-if="globalState.isOpen"
         @click="globalState.isOpen = false"
-    >VENTE DIRECTE SUR RENDEZ-VOUS 079 692 15 18</div>
+    >
+      <img src="./../assets/bs_4c_pos.svg" class="v-view-home__tagline-bottom__logo" alt="logo">
+      <div>VENTE DIRECTE SUR RENDEZ-VOUS 079 692 15 18</div>
+    </div>
   </div>
 </template>
 
@@ -78,6 +81,15 @@ export default defineComponent({
     text-align: center;
     padding-top: var(--m-gutter);
     padding-bottom: var(--m-gutter);
+
+    .v-view-home__tagline-bottom__logo {
+      display: block;
+      height: 5rem;
+      width: auto;
+      position: absolute;
+      right: 0;
+      bottom: var(--m-gutter);
+    }
   }
 
   .v-nav-top {

@@ -33,3 +33,17 @@ body {
     margin-bottom: 0 !important;
   }
 }
+
+.m-link-with-img {
+  text-decoration: none;
+  color: var(--m-color-ternary);
+
+  > img {
+    display: inline-block;
+    height: 0.65em;
+    padding-left: 0.25em;
+    color: inherit;
+    vertical-align: middle;
+    color: inherit;
+  }
+}

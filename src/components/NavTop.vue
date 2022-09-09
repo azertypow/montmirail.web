@@ -53,7 +53,7 @@ export default defineComponent({
 
   a {
     &.is-active {
-      color: var(--m-color-alternate);
+      color: var(--m-color-secondary);
     }
   }
 }

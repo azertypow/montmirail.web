@@ -21,7 +21,7 @@
                   class="v-content__content__text-container__section__content"
               >
                 <p>Installés à Montmirail près de Neuchâtel depuis 2011, notre exploitation est spécialisée dans la grande culture (maïs, soja, betteraves à sucre, millet, etc.). Soucieux de la qualité de nos produits, ainsi que de notre environnement notre production est labellisée Bourgeon. Pour entretenir la biodiversité de notre région, nous avons aussi des vergers, des ruches et un élevage bovin Natura-Beef. Pour ces produits nous privilégions la vente directe et les circuits courts, vous pourrez donc trouver chez nous des fruits de saison, du miel ainsi que de la viande.</p>
-                <p>Pour plus d’informations ou pour passer commande directement, vous pouvez nous joindre par téléphone au 079 692 15 18, par mail farm@doncamillo.ch, nous serons ravis de vous renseigner plus en détail. Nous nous réjouissons de vous accueillir dans notre ferme.</p>
+                <p>Pour plus d’informations ou pour passer commande directement, vous pouvez nous joindre par téléphone au 079 692 15 18, par mail <em>farm@doncamillo.ch</em>, nous serons ravis de vous renseigner plus en détail. Nous nous réjouissons de vous accueillir dans notre ferme.</p>
               </div>
             </section>
 
@@ -54,7 +54,8 @@
               <div
                   class="v-content__content__text-container__section__content"
               >
-                <p>Parce que nous aimons la viande et qu’il est important pour nous d’en connaître la provenance ainsi que de prodiguer un élevage respectueux des animaux, nos vaches sont élevées d’après les normes du label Natura-Beef. Natura-Beef est un label protégé et clairement définit (voir www.mutterkuh.ch). La viande provient de jeunes bêtes qui grandissent dans des élevages de vaches mères. Les veaux sont allaités et restent près de leurs mères jusqu’à l’âge de 8 à 10 mois. Leur nutrition se compose essentiellement de lait maternel et de fourrage grossier. Le troupeau pâture sur nos propres prés et passe l’hiver dans une stabulation libre. Les vaches et les veaux sont en compagnie de leur propre taureau.</p>
+                <p>Parce que nous aimons la viande et qu’il est important pour nous d’en connaître la provenance ainsi que de prodiguer un élevage respectueux des animaux, nos vaches sont élevées d’après les normes du label Natura-Beef. Natura-Beef est un label protégé et clairement définit (voir <a style="text-decoration: none; color: inherit" target="_blank" href="https://www.mutterkuh.ch/fr/natura-beef">mutterkuh.ch</a>). La viande provient de jeunes bêtes qui grandissent dans des élevages de vaches mères. Les veaux sont allaités et restent près de leurs mères jusqu’à l’âge de 8 à 10 mois. Leur nutrition se compose essentiellement de lait maternel et de fourrage grossier. Le troupeau pâture sur nos propres prés et passe l’hiver dans une stabulation libre. Les vaches et les veaux sont en compagnie de leur propre taureau.</p>
+                <div style="margin-top: 1rem" ><a href="./ferme_montmirail_naturabeef.pdf" target="_blank" class="m-link-with-img"><span>La liste des prix est par ici </span><img src="../assets/fleche.svg" alt="fleche"></a></div>
               </div>
             </section>
 
