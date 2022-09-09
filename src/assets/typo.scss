@@ -1,0 +1,23 @@
+@mixin font-h1 {
+  line-height: 4rem;
+  font-size: 3.8rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+h1, .font-h1 {
+  @include font-h1;
+}
+
+@mixin font-default {
+  font-size: 1.8rem;
+  line-height: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+p, .font-default {
+  @include font-default;
+}
