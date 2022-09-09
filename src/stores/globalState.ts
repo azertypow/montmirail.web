@@ -6,6 +6,7 @@ export const useGlobalState = defineStore('globalState', {
     return {
       isOpen: false,
       scrollPercent: 0,
+      viewIDActive: "",
     }
   }
 })

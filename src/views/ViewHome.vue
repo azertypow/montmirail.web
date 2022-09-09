@@ -70,7 +70,12 @@ export default defineComponent({
   }
 
   .v-view-home__tagline-bottom {
-    bottom: calc( var(--m-gutter) * 2);
+    bottom: var(--m-gutter);
+    width: calc((100% - var(--m-gutter) * 4) / 12 * 8);
+    background: var(--m-color-light);
+    text-align: center;
+    padding-top: var(--m-gutter);
+    padding-bottom: var(--m-gutter);
   }
 
   .v-nav-top {

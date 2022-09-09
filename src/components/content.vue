@@ -78,7 +78,7 @@
           >
             <div
                 :style="{
-                  transform: `translateY(${this.globalState.scrollPercent}%)`,
+                  transform: `translateY(${this.globalState.$state.scrollPercent}%)`,
                   bottom: '0',
                   position: 'absolute',
                   width: '100%',
@@ -118,12 +118,24 @@ export default defineComponent({
   },
 
   methods: {
-    scrollUpdate(e: Event) {
+    scrollUpdate(e: Event): void {
       if(!(e.target instanceof HTMLElement) ) return
+
+      const elementsWithID = e.target.querySelectorAll("[id]")
+
+      this.globalState.$state.viewIDActive = ""
+
+      for(const element of elementsWithID) {
+        if(
+            element.getBoundingClientRect().top > 0
+            && element.getBoundingClientRect().top < window.innerHeight / 2
+        ) this.globalState.$state.viewIDActive = element.id
+      }
+
       const heightTotal = e.target.scrollHeight - e.target.getBoundingClientRect().height
       const scrollTop   = e.target.scrollTop
 
-      this.globalState.scrollPercent =  Math.round( 100 / heightTotal * scrollTop )
+      this.globalState.$state.scrollPercent =  Math.round( 100 / heightTotal * scrollTop )
     }
   }
 
@@ -194,6 +206,10 @@ export default defineComponent({
     padding-left:   var(--m-gutter-xl);
     padding-right:  var(--m-gutter-xl);
     scroll-snap-align: start;
+
+    &.is-active {
+      border-bottom: solid 2px ;
+    }
   }
 
   .v-content__content__text-container__section__content {
