@@ -120,8 +120,6 @@ export default defineComponent({
 
       const elementsWithID = e.target.querySelectorAll("[id]")
 
-      this.globalState.$state.viewIDActive = ""
-
       for(const element of elementsWithID) {
         if(
             element.getBoundingClientRect().top > 0

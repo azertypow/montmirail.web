@@ -6,7 +6,7 @@ export const useGlobalState = defineStore('globalState', {
     return {
       isOpen: false,
       galleryScrollPosition: 0,
-      viewIDActive: "",
+      viewIDActive: "presentation",
     }
   }
 })
