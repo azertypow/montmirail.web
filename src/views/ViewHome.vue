@@ -2,7 +2,7 @@
   <div class="v-view-home">
 
     <div
-        class="v-view-home__tagline-top font-default"
+        class="v-view-home__tagline-top font-strong"
         v-if="globalState.isOpen"
         @click="globalState.isOpen = false"
     >PRODUITS DE LA FERME DE MONTMIRAIL</div>
@@ -19,7 +19,7 @@
     ></intro>
 
     <div
-        class="v-view-home__tagline-bottom font-default"
+        class="v-view-home__tagline-bottom font-small font-strong"
         v-if="globalState.isOpen"
         @click="globalState.isOpen = false"
     >VENTE DIRECTE SUR RENDEZ-VOUS 079 692 15 18</div>
@@ -59,9 +59,11 @@ export default defineComponent({
     white-space: nowrap;
     left: calc( (((100% -  var(--m-gutter) * 2) / 12 * 8) + var(--m-gutter)) / 2);
     z-index: 1000;
-    font-weight: 600;
     cursor: pointer;
     transform: translate(-50%, 0);
+
+    font-size: 1.4rem;
+    line-height: 1.5rem;
   }
 
   .v-view-home__tagline-top {

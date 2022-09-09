@@ -24,9 +24,10 @@
         <div
             class="v-intro__card__content__text m-remove-child-margin"
         >
-          <p>
+          <p class="font-strong font-small">
             PRODUITS DE LA FERME DE MONTMIRAIL
-            <br>VENTE DIRECTE SUR RENDEZ-VOUS 079 692 15 18
+            <br>VENTE DIRECTE
+            <br>SUR RENDEZ-VOUS 079 692 15 18
           </p>
         </div>
       </div>
@@ -72,7 +73,7 @@ export default defineComponent({
 
   .v-intro__card {
     background-image: url("web_frame.jpg");
-    background-size: cover;
+    background-size: auto 130%;
     background-position: center;
     position: absolute;
     padding: var(--m-gutter);
@@ -84,18 +85,21 @@ export default defineComponent({
   }
 
   .v-intro__card__content {
-    padding: var(--m-gutter);
+    padding: 20px 50px;
     text-align: center;
     background: var(--m-color-light);
   }
 
   .v-intro__card__content__text {
-    margin-top: 4rem;
+    margin-top: 2rem;
 
     p {
-      font-weight: 600;
       white-space: nowrap;
     }
+  }
+
+  .v-intro__card__content__title {
+    white-space: nowrap;
   }
 }
 </style>

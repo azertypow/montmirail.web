@@ -1,10 +1,15 @@
 :root {
   --m-unit:   10px;
 
+  @media (min-width: 1280px) {
+    --m-unit:   .8vw;
+  }
+
   --m-gutter: 2rem;
   --m-gutter-xl: 6rem;
 
   --m-color-light: white;
   --m-color-dark: rgb(5, 5, 5);
+  --m-color-alternate: #F71818;
 
 }

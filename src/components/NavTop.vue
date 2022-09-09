@@ -1,5 +1,5 @@
 <template>
-  <nav class="v-nav-top">
+  <nav class="v-nav-top font-small">
     <div
         class="v-nav-top__list"
     >
@@ -8,6 +8,7 @@
       <a href="#produit"      :class="{'is-active': isIDActive('produit')}"     >Produits fruitiers</a>
       <a href="#natura"       :class="{'is-active': isIDActive('natura')}"      >Natura-Beef</a>
       <a href="#miel"         :class="{'is-active': isIDActive('miel')}"        >Miel</a>
+      <a href="#miel"         :class="{'is-active': isIDActive('kk')}"        >Biodiversité</a>
     </div>
   </nav>
 </template>
@@ -37,7 +38,6 @@ export default defineComponent({
 .v-nav-top {
   box-sizing: border-box;
   padding: var(--m-gutter-xl) var(--m-gutter-xl) 2rem;
-  font-size: 1.5rem;
   background: var(--m-color-light);
 
   a {
@@ -51,8 +51,10 @@ export default defineComponent({
   flex-wrap: nowrap;
   justify-content: space-between;
 
-  a.is-active {
-    text-decoration: underline;
+  a {
+    &.is-active {
+      color: var(--m-color-alternate);
+    }
   }
 }
 </style>
