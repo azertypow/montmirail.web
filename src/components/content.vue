@@ -78,10 +78,7 @@
           >
             <div
                 :style="{
-                  transform: `translateY(${this.globalState.$state.scrollPercent}%)`,
-                  bottom: '0',
-                  position: 'absolute',
-                  width: '100%',
+                  transform: `translate3D(0, ${this.globalState.$state.galleryScrollPosition}px, 0)`,
                 }"
             >
               <img src="01.JPG" alt="image">
@@ -132,10 +129,19 @@ export default defineComponent({
         ) this.globalState.$state.viewIDActive = element.id
       }
 
+      const contentImageContainer = document.querySelector('.v-content__content__img-container > div')
+
+      if( contentImageContainer === null ) return
+
       const heightTotal = e.target.scrollHeight - e.target.getBoundingClientRect().height
       const scrollTop   = e.target.scrollTop
+      const contentScrollPercent = Math.round( 100 / heightTotal * scrollTop )
+      const totalScrollHeight =
+          contentImageContainer.getBoundingClientRect().height
+          - window.innerHeight
+          + 40
 
-      this.globalState.$state.scrollPercent =  Math.round( 100 / heightTotal * scrollTop )
+      this.globalState.$state.galleryScrollPosition = totalScrollHeight / 100 * contentScrollPercent
     }
   }
 
@@ -171,6 +177,13 @@ export default defineComponent({
     overflow: hidden;
     height: 100%;
     position: relative;
+
+    > div {
+      padding-bottom: 0;
+      bottom: 0;
+      position: absolute;
+      width: 100%;
+    }
 
     img {
       display: block;
