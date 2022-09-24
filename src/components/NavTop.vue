@@ -44,17 +44,28 @@ export default defineComponent({
     color: inherit;
     text-decoration: none;
   }
-}
 
-.v-nav-top__list {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+  .v-nav-top__list {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
 
-  a {
-    &.is-active {
-      color: var(--m-color-secondary);
+    a {
+      &.is-active {
+        color: var(--m-color-secondary);
+      }
     }
+  }
+
+  &.transition-intro-enter-active,
+  &.transition-intro-leave-active {
+    transition: opacity .75s .25s ease-in-out, transform .75s .25s ease-in-out;
+  }
+
+  &.transition-intro-enter-from,
+  &.transition-intro-leave-to {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
   }
 }
 </style>

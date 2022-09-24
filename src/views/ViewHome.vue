@@ -1,31 +1,42 @@
 <template>
   <div class="v-view-home">
 
-    <div
-        class="v-view-home__tagline-top font-strong"
-        v-if="globalState.isOpen"
-        @click="globalState.isOpen = false"
-    >PRODUITS DE LA FERME DE MONTMIRAIL</div>
+    <transition name="transition-intro">
+      <div
+          class="v-view-home__tagline-top font-strong"
+          v-if="globalState.isOpen"
+          @click="globalState.isOpen = false"
+      >PRODUITS DE LA FERME DE MONTMIRAIL</div>
+    </transition>
 
-    <nav-top
-        v-if="globalState.isOpen"
-    ></nav-top>
+    <transition name="transition-intro">
+      <nav-top
+          v-if="globalState.isOpen"
+      ></nav-top>
+    </transition>
 
-    <content
-        v-if="globalState.isOpen"
-    ></content>
-    <intro
-        v-else
-    ></intro>
+    <transition name="transition-intro">
+      <content
+          v-if="globalState.isOpen"
+      ></content>
+    </transition>
 
-    <div
-        class="v-view-home__tagline-bottom font-small font-strong"
-        v-if="globalState.isOpen"
-        @click="globalState.isOpen = false"
-    >
-      <img src="./../assets/bs_4c_pos.svg" class="v-view-home__tagline-bottom__logo" alt="logo">
-      <div>VENTE DIRECTE SUR RENDEZ-VOUS 079 692 15 18</div>
-    </div>
+    <transition name="transition-intro">
+      <intro
+          v-if="! globalState.isOpen"
+      ></intro>
+    </transition>
+
+    <transition name="transition-intro">
+      <div
+          class="v-view-home__tagline-bottom font-small font-strong"
+          v-if="globalState.isOpen"
+          @click="globalState.isOpen = false"
+      >
+        <img src="./../assets/bs_4c_pos.svg" class="v-view-home__tagline-bottom__logo" alt="logo">
+        <div>VENTE DIRECTE SUR RENDEZ-VOUS 079 692 15 18</div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -98,6 +109,27 @@ export default defineComponent({
     top: var(--m-gutter);
     left: var(--m-gutter);
     width: calc( (100% - var(--m-gutter) * 2) / 12 * 8);
+  }
+}
+
+.transition-intro-enter-active,
+.transition-intro-leave-active {
+  &.v-view-home__tagline-top,
+  &.v-view-home__tagline-bottom {
+    transition: opacity .5s .75s ease-in-out, transform .5s .75s ease-in-out;
+  }
+}
+
+.transition-intro-enter-from,
+.transition-intro-leave-to {
+  &.v-view-home__tagline-top {
+    opacity: 0;
+    transform: translate3d(-50%, 20px, 0);
+  }
+
+  &.v-view-home__tagline-bottom {
+    opacity: 0;
+    transform: translate3d(-50%, -20px, 0);
   }
 }
 </style>

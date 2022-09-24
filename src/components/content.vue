@@ -149,12 +149,14 @@ export default defineComponent({
 <style lang="scss">
 .v-content {
   background-image: url("web_frame.jpg");
-  background-size: cover;
+  background-size: auto 130%;
   background-position: center;
-  position: relative;
+  position: fixed;
   padding: var(--m-gutter);
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
   box-sizing: border-box;
 
   .v-content__content {
@@ -232,6 +234,16 @@ export default defineComponent({
     p + p {
       text-indent: 4rem;
     }
+  }
+
+  &.transition-intro-enter-active,
+  &.transition-intro-leave-active {
+    //transition: opacity .5s .5s ease-in-out;
+  }
+
+  &.transition-intro-enter-from,
+  &.transition-intro-leave-to {
+    //opacity: 0;
   }
 }
 </style>

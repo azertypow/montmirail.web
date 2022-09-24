@@ -38,13 +38,9 @@
 
 <script lang="ts">
 import {defineComponent} from "vue"
-import {useGlobalState} from "../stores/globalState"
+import {useGlobalState} from "@/stores/globalState"
 
 export default defineComponent({
-  // props: {
-  //   name: String,
-  //   msg: {type: String, required: true}
-  // },
 
   data() {
     return {
@@ -80,18 +76,29 @@ export default defineComponent({
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transform-origin: bottom right;
     user-select: none;
     cursor: pointer;
+    height: 275px;
+    width: 455px;
+    box-sizing: border-box;
   }
 
   .v-intro__card__content {
     padding: 20px 50px;
     text-align: center;
     background: var(--m-color-light);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
   }
 
   .v-intro__card__content__text {
-    margin-top: 2rem;
+    position: absolute;
+    bottom: var(--m-gutter);
+    left: 0;
+    width: 100%;
 
     p {
       white-space: nowrap;
@@ -100,6 +107,44 @@ export default defineComponent({
 
   .v-intro__card__content__title {
     white-space: nowrap;
+    position: absolute;
+    top: calc( var(--m-gutter) / 2 );
+    left: 0;
+    width: 100%;
+  }
+
+  &.transition-intro-enter-active,
+  &.transition-intro-leave-active {
+    transition: opacity .5s .5s ease-in-out;
+
+    .v-intro__card {
+      transition: width .5s ease-in-out, height .5s ease-in-out;
+    }
+
+    .v-intro__card__content__text,
+    .v-intro__card__content__title {
+      transition: transform .25s ease-in-out, opacity .25s ease-in-out;
+    }
+  }
+
+  &.transition-intro-enter-from ,
+  &.transition-intro-leave-to {
+    opacity: 0;
+
+    .v-intro__card {
+      width: 100%;
+      height: 100%;
+    }
+
+    .v-intro__card__content__text {
+      opacity: 0;
+      transform: translate3d(0, -25px, 0);
+    }
+
+    .v-intro__card__content__title {
+      opacity: 0;
+      transform: translate3d(0, 25px, 0);
+    }
   }
 }
 </style>
