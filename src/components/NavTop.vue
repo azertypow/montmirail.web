@@ -8,7 +8,7 @@
       <a href="#produit"      :class="{'is-active': isIDActive('produit')}"     >Produits fruitiers</a>
       <a href="#natura"       :class="{'is-active': isIDActive('natura')}"      >Natura-Beef</a>
       <a href="#miel"         :class="{'is-active': isIDActive('miel')}"        >Miel</a>
-      <a href="#miel"         :class="{'is-active': isIDActive('kk')}"        >Biodiversité</a>
+<!--      <a href="#miel"         :class="{'is-active': isIDActive('kk')}"        >Biodiversité</a>-->
     </div>
   </nav>
 </template>
