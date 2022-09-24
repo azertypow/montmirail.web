@@ -33,7 +33,7 @@
           v-if="globalState.isOpen"
           @click="globalState.isOpen = false"
       >
-        <img src="./../assets/bs_4c_pos.svg" class="v-view-home__tagline-bottom__logo" alt="logo">
+        <img src="./../assets/logo_bio_suisse.svg" class="v-view-home__tagline-bottom__logo" alt="logo">
         <div>VENTE DIRECTE SUR RENDEZ-VOUS 079 692 15 18</div>
       </div>
     </transition>
