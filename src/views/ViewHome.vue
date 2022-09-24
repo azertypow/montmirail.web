@@ -112,11 +112,17 @@ export default defineComponent({
   }
 }
 
-.transition-intro-enter-active,
-.transition-intro-leave-active {
+.transition-intro-enter-active {
   &.v-view-home__tagline-top,
   &.v-view-home__tagline-bottom {
     transition: opacity .5s .75s ease-in-out, transform .5s .75s ease-in-out;
+  }
+}
+
+.transition-intro-leave-active {
+  &.v-view-home__tagline-top,
+  &.v-view-home__tagline-bottom {
+    transition: opacity .5s 0s ease-in-out, transform .5s 0s ease-in-out;
   }
 }
 

@@ -79,20 +79,20 @@
           >
             <div
                 :style="{
-                  transform: `translate3D(0, ${this.globalState.$state.galleryScrollPosition}px, 0)`,
+                  transform: `translate3D(0, ${globalState.$state.galleryScrollPosition}px, 0)`,
                 }"
             >
-              <img src="01.JPG" alt="image">
-              <img src="02.JPG" alt="image">
-              <img src="03.JPG" alt="image">
-              <img src="04.JPG" alt="image">
-              <img src="05.JPG" alt="image">
-              <img src="06.JPG" alt="image">
-              <img src="07.JPG" alt="image">
-              <img src="08.JPG" alt="image">
-              <img src="09.JPG" alt="image">
-              <img src="10.JPG" alt="image">
-              <img src="11.JPG" alt="image">
+              <img src="/01.jpg" alt="image">
+              <img src="/02.jpg" alt="image">
+              <img src="/03.jpg" alt="image">
+              <img src="/04.jpg" alt="image">
+              <img src="/05.jpg" alt="image">
+              <img src="/06.jpg" alt="image">
+              <img src="/07.jpg" alt="image">
+              <img src="/08.jpg" alt="image">
+              <img src="/09.jpg" alt="image">
+              <img src="/10.jpg" alt="image">
+              <img src="/11.jpg" alt="image">
             </div>
           </div>
         </div>

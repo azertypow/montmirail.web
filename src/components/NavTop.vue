@@ -57,9 +57,12 @@ export default defineComponent({
     }
   }
 
-  &.transition-intro-enter-active,
-  &.transition-intro-leave-active {
+  &.transition-intro-enter-active {
     transition: opacity .75s .25s ease-in-out, transform .75s .25s ease-in-out;
+  }
+
+  &.transition-intro-leave-active {
+    transition: opacity .75s 0s ease-in-out, transform .75s 0s ease-in-out;
   }
 
   &.transition-intro-enter-from,
