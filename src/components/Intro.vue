@@ -7,7 +7,7 @@
 
     <div
         class="v-intro__card"
-        @click="globalState.isOpen = true"
+        @click="cardClicked"
     >
       <div
           class="v-intro__card__content"
@@ -47,6 +47,15 @@ export default defineComponent({
       globalState: useGlobalState()
     }
   },
+
+  methods: {
+    cardClicked() {
+      this.globalState.isOpen                 = true
+      this.globalState.galleryScrollPosition  = 0
+      this.globalState.viewIDActive           = "presentation"
+      window.history.pushState({}, '', '/')
+    }
+  }
 
 })</script>
 

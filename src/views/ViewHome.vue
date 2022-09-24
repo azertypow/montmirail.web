@@ -5,7 +5,7 @@
       <div
           class="v-view-home__tagline-top font-strong"
           v-if="globalState.isOpen"
-          @click="globalState.isOpen = false"
+          @click="goToIntro()"
       >PRODUITS DE LA FERME DE MONTMIRAIL</div>
     </transition>
 
@@ -31,7 +31,7 @@
       <div
           class="v-view-home__tagline-bottom font-small font-strong"
           v-if="globalState.isOpen"
-          @click="globalState.isOpen = false"
+          @click="goToIntro"
       >
         <img src="./../assets/logo_bio_suisse.svg" class="v-view-home__tagline-bottom__logo" alt="logo">
         <div>VENTE DIRECTE SUR RENDEZ-VOUS 079 692 15 18</div>
@@ -55,7 +55,11 @@ export default defineComponent({
     }
   },
 
-  computed: {
+  methods: {
+    goToIntro() {
+      globalState.isOpen = false
+      window.history.pushState({}, '', '/')
+    }
   },
 
 })</script>
