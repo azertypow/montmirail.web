@@ -57,7 +57,7 @@ export default defineComponent({
 
   methods: {
     goToIntro() {
-      globalState.isOpen = false
+      this.globalState.$state.isOpen = false
       window.history.pushState({}, '', '/')
     }
   },
