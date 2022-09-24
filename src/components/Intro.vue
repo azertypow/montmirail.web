@@ -62,7 +62,7 @@ export default defineComponent({
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('01.JPG');
+    background-image: url('09.JPG');
     background-size: cover;
     background-position: center;
   }

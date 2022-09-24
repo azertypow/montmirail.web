@@ -82,6 +82,10 @@
                   transform: `translate3D(0, ${globalState.$state.galleryScrollPosition}px, 0)`,
                 }"
             >
+              <img src="/_3.jpg" alt="image">
+              <img src="/_2.jpg" alt="image">
+              <img src="/_1.jpg" alt="image">
+              <img src="/00.jpg" alt="image">
               <img src="/01.jpg" alt="image">
               <img src="/02.jpg" alt="image">
               <img src="/03.jpg" alt="image">
