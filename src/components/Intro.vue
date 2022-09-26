@@ -71,13 +71,13 @@ export default defineComponent({
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('09.JPG');
+    background-image: url('/09.JPG');
     background-size: cover;
     background-position: center;
   }
 
   .v-intro__card {
-    background-image: url("web_frame.jpg");
+    background-image: url("/web_frame.jpg");
     background-size: auto 130%;
     background-position: center;
     position: absolute;

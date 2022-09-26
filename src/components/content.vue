@@ -152,7 +152,7 @@ export default defineComponent({
 
 <style lang="scss">
 .v-content {
-  background-image: url("web_frame.jpg");
+  background-image: url("/web_frame.jpg");
   background-size: auto 130%;
   background-position: center;
   position: fixed;
