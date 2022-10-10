@@ -81,7 +81,7 @@ export default defineComponent({
     background-size: auto 130%;
     background-position: center;
     position: absolute;
-    padding: var(--m-gutter);
+    padding: 20px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -105,21 +105,28 @@ export default defineComponent({
 
   .v-intro__card__content__text {
     position: absolute;
-    bottom: var(--m-gutter);
+    bottom: 20px;
     left: 0;
     width: 100%;
 
     p {
       white-space: nowrap;
+      font-size: 15px;
+      line-height: 16px;
     }
   }
 
   .v-intro__card__content__title {
     white-space: nowrap;
     position: absolute;
-    top: calc( var(--m-gutter) / 2 );
+    top: calc( 20px / 2 );
     left: 0;
     width: 100%;
+
+    h1 {
+      line-height: 40px;
+      font-size: 38px;
+    }
   }
 
   &.transition-intro-enter-active,
