@@ -53,3 +53,8 @@ body {
     }
   }
 }
+
+em {
+  font-style: inherit;
+  color: var(--m-color-ternary);
+}

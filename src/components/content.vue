@@ -20,8 +20,21 @@
               <div
                   class="v-content__content__text-container__section__content"
               >
-                <p>Installés à Montmirail près de Neuchâtel depuis 2011, notre exploitation est spécialisée dans la grande culture (maïs, soja, betteraves à sucre, millet, etc.). Soucieux de la qualité de nos produits, ainsi que de notre environnement notre production est labellisée Bourgeon. Pour entretenir la biodiversité de notre région, nous avons aussi des vergers, des ruches et un élevage bovin Natura-Beef. Pour ces produits nous privilégions la vente directe et les circuits courts, vous pourrez donc trouver chez nous des fruits de saison, du miel ainsi que de la viande.</p>
-                <p>Pour plus d’informations ou pour passer commande directement, vous pouvez nous joindre par téléphone au 079 692 15 18, par mail <em>farm@doncamillo.ch</em>, nous serons ravis de vous renseigner plus en détail. Nous nous réjouissons de vous accueillir dans notre ferme.</p>
+                <p>
+                  Installés à Montmirail près de Neuchâtel depuis 2011, nous tenons une exploitation spécialisée dans
+                  les grandes cultures (maïs, soja, tournesol, blé d’automne). Attentifs à la qualité des produits ainsi
+                  qu’à l’environnement, notre production est labellisée Bourgeon de Bio Suisse. Pour entretenir la
+                  biodiversité de la région, nous avons aussi des vergers, des ruches et un élevage bovin Natura-Beef.
+                  Pour ces produits, nous privilégions la vente directe et les circuits courts, vous pourrez donc
+                  trouver chez nous des <em>fruits de saison</em>, du <em>miel</em> ainsi que de la <em>viande</em>.
+                  Cette année, nous proposons en plus différentes
+                  variétés de <em>courges</em> ainsi que des <em>noix</em>.
+                </p>
+                <p>
+                  Pour plus d’informations ou pour passer commande directement, vous pouvez nous joindre au 079 692 15
+                  18 ou nous écrire à <i>farm@doncamillo.ch</i>. Nous serons ravis de vous renseigner plus en
+                  détail et de vous accueillir à la ferme.
+                </p>
               </div>
             </section>
 
@@ -32,7 +45,18 @@
               <div
                   class="v-content__content__text-container__section__content"
               >
-                <p>Nos vergers produisent une grande variété de fruits. On y trouve des pommes (Golden Delicious, Topas, Rubinette, Idarette, Boskop, Gala), des poires (Kaiser Alexander, Conférence), des prunes (Felsina, Fellenberger) ainsi que des cerises. Pour prendre le relais de l’ancien verger, depuis 3 ans nous sommes en train d’en créer un nouveau avec des variétés de pommes complémentaires telles que X et Y. En plus du verger classique, nous avons tout autour de notre domaine des arbres fruitiers hautes-tiges composés d’espèces plus rares et rustiques qui viennent enrichir le paysage et compléter la diversité végétale de la ferme.</p>
+                <p>
+                  Nos vergers produisent une grande variété de fruits : les pommes Rubinette, Idared, Boskoop et Gala
+                  ainsi que les poires Beurré Bosc et Conférence. Pour prendre le relais de l’ancien verger, nous en
+                  avons crée depuis quelques années un nouveau avec les variétés de pommes qui ont fait leurs preuves,
+                  complété par la variété Topaz.
+                </p>
+                <p>
+                  En plus du verger classique, nous avons sur notre domaine un verger haute-tige composé
+                  essentiellement de variétés anciennes et robustes qui enrichissent le paysage et complètent la
+                  diversité végétale de la ferme. Outre les pommiers et les poiriers, on y trouve des pruniers et des
+                  mirabelliers, par exemple.
+                </p>
               </div>
             </section>
 
@@ -43,7 +67,12 @@
               <div
                   class="v-content__content__text-container__section__content"
               >
-                <p>En plus de nos fruits frais, nous proposons du jus de pommes et des fruits séchés (pommes, poires, prunes) qui permettent de déguster tout au long de l’année notre production estivale et automnale. Afin d’utiliser nos fruits murs invendus, nous nous sommes aussi mis à produire de l’eau-de-vie en petite quantité. Vous en trouverez cinq variétés différentes, Pomme Gala, Pomme Rubinette, Prune Berutge, Pruneau Fellenberg et Coing.</p>
+                <p>
+                  En plus des fruits frais, nous proposons du <em>jus de pomme</em> et <em>des fruits séchés</em> qui
+                  permettent de déguster tout au long de l’année notre production estivale et automnale. Afin d’utiliser les fruits
+                  mûrs invendus, nous nous sommes aussi mis à produire de <em>l’eau-de-vie</em> en petite quantité,
+                  disponible actuellement en trois sortes différentes : Pomme Rubinette, Pruneau Fellenberg et Poire.
+                </p>
               </div>
             </section>
 
@@ -54,7 +83,15 @@
               <div
                   class="v-content__content__text-container__section__content"
               >
-                <p>Parce que nous aimons la viande et qu’il est important pour nous d’en connaître la provenance ainsi que de prodiguer un élevage respectueux des animaux, nos vaches sont élevées d’après les normes du label Natura-Beef. Natura-Beef est un label protégé et clairement définit (voir <a style="text-decoration: none; color: inherit" target="_blank" href="https://www.mutterkuh.ch/fr/natura-beef">mutterkuh.ch</a>). La viande provient de jeunes bêtes qui grandissent dans des élevages de vaches mères. Les veaux sont allaités et restent près de leurs mères jusqu’à l’âge de 8 à 10 mois. Leur nutrition se compose essentiellement de lait maternel et de fourrage grossier. Le troupeau pâture sur nos propres prés et passe l’hiver dans une stabulation libre. Les vaches et les veaux sont en compagnie de leur propre taureau.</p>
+                <p>
+                  Parce que nous aimons la viande et qu’il est important pour nous d’en connaître la provenance ainsi
+                  que de prodiguer un élevage respectueux des animaux, nos vaches sont élevées d’après les normes du
+                  label Natura-Beef (voir mutterkuh.ch ((hyperlien))). La viande provient de jeunes bêtes qui
+                  grandissent dans des élevages de vaches mères. Les veaux sont allaités et restent près de leurs mères
+                  jusqu’à l’âge de 10 mois. Leur nutrition se compose essentiellement de lait maternel et de fourrages
+                  grossiers. Le troupeau pâture sur nos propres prés et passe l’hiver en stabulation libre. Les vaches
+                  et les veaux sont en compagnie de leur taureau.
+                </p>
                 <div style="margin-top: 1rem" ><a href="./ferme_montmirail_naturabeef.pdf" target="_blank" class="m-link-with-img"><span>La liste des prix est par ici </span><img src="../assets/fleche.svg" alt="fleche"></a></div>
               </div>
             </section>
@@ -66,7 +103,9 @@
               <div
                   class="v-content__content__text-container__section__content"
               >
-                <p>Les ruches récemment implantées dans notre ferme permettent la pollinisation de notre verger et contribuent à la sauvegarde des abeilles. De mai à septembre, nous récoltons le miel qui au travers de ses saveurs reflète les cycles et la diversité végétale de notre région.</p>
+                <p>
+                  Depuis 2018, Angela s’occupe également de quelques colonies d’abeilles qui contribuent à la pollinisation des arbres fruitiers et d’autres cultures en fleurs aux alentours de notre ferme. Nous récoltons le miel de printemps de fin mai à début juin et le miel d’été vers la mi-juillet. À travers ses saveurs, le miel reflète l’offre florale du moment (et la météo) dans toute sa diversité.
+                </p>
               </div>
             </section>
           </div>
