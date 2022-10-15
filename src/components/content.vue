@@ -86,11 +86,11 @@
                 <p>
                   Parce que nous aimons la viande et qu’il est important pour nous d’en connaître la provenance ainsi
                   que de prodiguer un élevage respectueux des animaux, nos vaches sont élevées d’après les normes du
-                  label Natura-Beef (voir mutterkuh.ch ((hyperlien))). La viande provient de jeunes bêtes qui
-                  grandissent dans des élevages de vaches mères. Les veaux sont allaités et restent près de leurs mères
-                  jusqu’à l’âge de 10 mois. Leur nutrition se compose essentiellement de lait maternel et de fourrages
-                  grossiers. Le troupeau pâture sur nos propres prés et passe l’hiver en stabulation libre. Les vaches
-                  et les veaux sont en compagnie de leur taureau.
+                  label Natura-Beef (voir <a href="https://www.mutterkuh.ch/fr/natura-beef" target="_blank">mutterkuh.ch</a>).
+                  La viande provient de jeunes bêtes qui grandissent dans des élevages de vaches mères. Les veaux sont
+                  allaités et restent près de leurs mères jusqu’à l’âge de 10 mois. Leur nutrition se compose essentiellement
+                  de lait maternel et de fourrages grossiers. Le&nbsp;troupeau pâture sur nos propres prés et passe l’hiver en stabulation libre.
+                  Les vaches et les veaux sont en compagnie de leur taureau.
                 </p>
                 <div style="margin-top: 1rem" ><a href="./ferme_montmirail_naturabeef.pdf" target="_blank" class="m-link-with-img"><span>La liste des prix est par ici </span><img src="../assets/fleche.svg" alt="fleche"></a></div>
               </div>
