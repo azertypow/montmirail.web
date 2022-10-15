@@ -121,18 +121,22 @@
                   transform: `translate3D(0, ${globalState.$state.galleryScrollPosition}px, 0)`,
                 }"
             >
-              <img src="/_3.jpg" alt="image">
-              <img src="/_2.jpg" alt="image">
               <img src="/_1.jpg" alt="image">
-              <img src="/00.jpg" alt="image">
-              <img src="/01.jpg" alt="image">
+              <img src="/_2.jpg" alt="image">
+              <img src="/_3.jpg" alt="image">
+
               <img src="/02.jpg" alt="image">
-              <img src="/03.jpg" alt="image">
-              <img src="/04.jpg" alt="image">
+              <img src="/01.jpg" alt="image">
+              <img src="/00.jpg" alt="image">
+
               <img src="/05.jpg" alt="image">
-              <img src="/06.jpg" alt="image">
-              <img src="/07.jpg" alt="image">
+              <img src="/04.jpg" alt="image">
+              <img src="/03.jpg" alt="image">
+
               <img src="/08.jpg" alt="image">
+              <img src="/07.jpg" alt="image">
+              <img src="/06.jpg" alt="image">
+
               <img src="/09.jpg" alt="image">
               <img src="/10.jpg" alt="image">
               <img src="/11.jpg" alt="image">
@@ -191,8 +195,8 @@ export default defineComponent({
 
 <style lang="scss">
 .v-content {
-  background-image: url("/web_frame.jpg");
-  background-size: auto 130%;
+  background-image: url("/web_frame.jpeg");
+  background-size: auto 100%;
   background-position: center;
   position: fixed;
   padding: var(--m-gutter);

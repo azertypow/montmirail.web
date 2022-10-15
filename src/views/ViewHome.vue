@@ -31,7 +31,7 @@
       <div
           class="v-view-home__tagline-bottom font-small font-strong"
           v-if="globalState.isOpen"
-          @click="goToIntro"
+          @click="goToIntro()"
       >
         <img src="./../assets/logo_bio_suisse.svg" class="v-view-home__tagline-bottom__logo" alt="logo">
         <div>VENTE DIRECTE SUR RENDEZ-VOUS 079 692 15 18</div>
@@ -46,6 +46,7 @@ import {useGlobalState} from "@/stores/globalState"
 import Intro from "@/components/Intro.vue"
 import Content from "@/components/content.vue"
 import NavTop from "@/components/NavTop.vue"
+import {mobilMinWidth} from "@/main"
 
 export default defineComponent({
   components: {NavTop, Content, Intro},

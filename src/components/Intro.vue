@@ -8,6 +8,7 @@
     <div
         class="v-intro__card"
         @click="cardClicked"
+        ref="introCard"
     >
       <div
           class="v-intro__card__content"
@@ -40,6 +41,7 @@
 <script lang="ts">
 import {defineComponent} from "vue"
 import {useGlobalState} from "@/stores/globalState"
+import {mobilMinWidth} from "@/main"
 
 export default defineComponent({
 
@@ -51,12 +53,30 @@ export default defineComponent({
 
   methods: {
     cardClicked() {
+      if( window.innerWidth < mobilMinWidth ) return
       this.globalState.isOpen                 = true
       this.globalState.galleryScrollPosition  = 0
       this.globalState.viewIDActive           = "presentation"
       window.history.pushState({}, '', '/')
-    }
-  }
+    },
+
+    resizeCard() {
+      if( !(this.$refs.introCard instanceof HTMLElement)) return
+      this.$refs.introCard.style.transformOrigin = 'top left'
+      if( window.innerWidth < mobilMinWidth )
+        this.$refs.introCard.style.transform
+            = `scale(${window.innerWidth / (mobilMinWidth - 400) }) translate(-50%, -50%)`
+
+      else this.$refs.introCard.style.transform = ""
+    },
+  },
+
+  mounted() {
+    this.$nextTick(() => {
+      this.resizeCard()
+      window.addEventListener('resize', this.resizeCard)
+    })
+  },
 
 })</script>
 
@@ -78,8 +98,8 @@ export default defineComponent({
   }
 
   .v-intro__card {
-    background-image: url("/web_frame.jpg");
-    background-size: auto 130%;
+    background-image: url("/web_frame.jpeg");
+    background-size: auto 100%;
     background-position: center;
     position: absolute;
     padding: 20px;
