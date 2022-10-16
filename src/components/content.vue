@@ -263,10 +263,11 @@ export default defineComponent({
     min-height: calc( 100vh - var(--m-gutter) * 2 );
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     padding-left:   var(--m-gutter-xl);
     padding-right:  var(--m-gutter-xl);
     scroll-snap-align: start;
+    padding-top: 9rem;
 
     &.is-active {
       border-bottom: solid 2px ;
