@@ -18,6 +18,7 @@
                 class="v-content__content__text-container__section"
             >
               <div
+                  ref="textContainer"
                   class="v-content__content__text-container__section__content"
               >
                 <p>
@@ -43,6 +44,7 @@
                 class="v-content__content__text-container__section"
             >
               <div
+                  ref="textContainer"
                   class="v-content__content__text-container__section__content"
               >
                 <p>
@@ -65,6 +67,7 @@
                 class="v-content__content__text-container__section"
             >
               <div
+                  ref="textContainer"
                   class="v-content__content__text-container__section__content"
               >
                 <p>
@@ -81,6 +84,7 @@
                 class="v-content__content__text-container__section"
             >
               <div
+                  ref="textContainer"
                   class="v-content__content__text-container__section__content"
               >
                 <p>
@@ -101,6 +105,7 @@
                 class="v-content__content__text-container__section"
             >
               <div
+                  ref="textContainer"
                   class="v-content__content__text-container__section__content"
               >
                 <p>
@@ -160,6 +165,43 @@ export default defineComponent({
     return {
       globalState: useGlobalState()
     }
+  },
+
+  mounted() {
+    this.$nextTick(() => {
+
+      const runSetFontSize = async () => {
+
+        requestAnimationFrame(() => {
+          if (!(this.$el instanceof HTMLElement)) return
+
+          let textContentIsBiggerThanParent = false
+          const textViewHeight = this.$el.querySelector('.v-content__content__text-container')?.getBoundingClientRect().height || null
+
+          if (textViewHeight == null) return
+
+          this.$el.querySelectorAll('.v-content__content__text-container__section').forEach((element: any) => {
+            if (!(element instanceof HTMLElement)) return
+            if (element.getBoundingClientRect().height > textViewHeight) textContentIsBiggerThanParent = true
+          })
+
+          if (!textContentIsBiggerThanParent) return
+
+          const pElement = this.$el.querySelectorAll('.v-content__content__text-container__section__content *')
+
+          if (textContentIsBiggerThanParent) for (const p of pElement) {
+            if (!(p instanceof HTMLElement)) return
+            p.style.lineHeight = '1.3em'
+            p.style.fontSize = parseFloat(window.getComputedStyle(p).fontSize) - .01 + 'px'
+            runSetFontSize()
+          } else {}
+          debugger
+        })
+      }
+      runSetFontSize().then(() => {
+        console.log('ended')
+      })
+    })
   },
 
   methods: {
@@ -267,7 +309,8 @@ export default defineComponent({
     padding-left:   var(--m-gutter-xl);
     padding-right:  var(--m-gutter-xl);
     scroll-snap-align: start;
-    padding-top: 9rem;
+    padding-top: 10rem;
+    padding-bottom: 6rem;
 
     &.is-active {
       border-bottom: solid 2px ;
