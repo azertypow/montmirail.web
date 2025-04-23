@@ -96,7 +96,7 @@
                   de lait maternel et de fourrages grossiers. Le&nbsp;troupeau pâture sur nos propres prés et passe l’hiver en stabulation libre.
                   Les vaches et les veaux sont en compagnie de leur taureau.
                 </p>
-                <div style="margin-top: 1rem" ><a href="./ferme_montmirail_naturabeef.pdf" target="_blank" class="m-link-with-img"><span>La liste des prix est par ici </span><img src="../assets/fleche.svg" alt="fleche"></a></div>
+                <div style="margin-top: 1rem" ><a href="/ferme_montmirail_naturabeef_2025.pdf" target="_blank" class="m-link-with-img"><span>La liste des prix est par ici </span><img src="../assets/fleche.svg" alt="fleche"></a></div>
               </div>
             </section>
 
