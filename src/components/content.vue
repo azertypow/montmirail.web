@@ -126,9 +126,9 @@
                   transform: `translate3D(0, ${globalState.$state.galleryScrollPosition}px, 0)`,
                 }"
             >
-              <img src="/_1.jpg" alt="image">
-              <img src="/_2.jpg" alt="image">
-              <img src="/_3.jpg" alt="image">
+              <img src="/1_1.jpg" alt="image">
+              <img src="/1_2.jpg" alt="image">
+              <img src="/1_3.jpg" alt="image">
 
               <img src="/02.jpg" alt="image">
               <img src="/01.jpg" alt="image">
@@ -194,8 +194,7 @@ export default defineComponent({
             p.style.lineHeight = '1.3em'
             p.style.fontSize = parseFloat(window.getComputedStyle(p).fontSize) - .01 + 'px'
             runSetFontSize()
-          } else {}
-          debugger
+          }
         })
       }
       runSetFontSize().then(() => {
