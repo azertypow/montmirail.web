@@ -267,6 +267,10 @@ export default defineComponent({
     height: 100%;
     position: relative;
 
+    @media (max-width: 980px) {
+      display: none;
+    }
+
     > div {
       padding-bottom: 0;
       bottom: 0;
@@ -307,6 +311,13 @@ export default defineComponent({
     justify-content: flex-start;
     padding-left:   var(--m-gutter-xl);
     padding-right:  var(--m-gutter-xl);
+
+    @media (max-width: 980px) {
+      padding-left: var(--m-gutter);
+      padding-right: var(--m-gutter);
+      padding-top: 14rem;
+    }
+
     scroll-snap-align: start;
     padding-top: 10rem;
     padding-bottom: 6rem;

@@ -83,11 +83,22 @@ export default defineComponent({
 
     font-size: 1.4rem;
     line-height: 1.5rem;
+
+    @media (max-width: 980px) {
+      left: 50%;
+      width: calc(100% - var(--m-gutter) * 2);
+      white-space: normal;
+    }
   }
 
   .v-view-home__tagline-top {
     top: calc( var(--m-gutter) * 2);
     transform-origin: center center;
+
+    @media (max-width: 980px) {
+      top: var(--m-gutter);
+      text-align: center;
+    }
   }
 
   .v-view-home__tagline-bottom {
@@ -105,6 +116,16 @@ export default defineComponent({
       position: absolute;
       right: 0;
       bottom: var(--m-gutter);
+
+      @media (max-width: 980px) {
+        position: static;
+        margin: 1rem auto 0;
+      }
+    }
+
+    @media (max-width: 980px) {
+      bottom: 0;
+      width: 100%;
     }
   }
 
@@ -114,6 +135,12 @@ export default defineComponent({
     top: var(--m-gutter);
     left: var(--m-gutter);
     width: calc( (100% - var(--m-gutter) * 2) / 12 * 8);
+
+    @media (max-width: 980px) {
+      top: 6rem;
+      left: 0;
+      width: 100%;
+    }
   }
 }
 

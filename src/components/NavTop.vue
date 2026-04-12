@@ -50,11 +50,21 @@ export default defineComponent({
     flex-wrap: nowrap;
     justify-content: space-between;
 
+    @media (max-width: 980px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
     a {
       &.is-active {
         color: var(--m-color-secondary);
       }
     }
+  }
+
+  @media (max-width: 980px) {
+    padding: 1rem;
   }
 
   &.transition-intro-enter-active {

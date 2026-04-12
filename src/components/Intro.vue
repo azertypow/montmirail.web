@@ -53,7 +53,6 @@ export default defineComponent({
 
   methods: {
     cardClicked() {
-      if( window.innerWidth < mobilMinWidth ) return
       this.globalState.isOpen                 = true
       this.globalState.galleryScrollPosition  = 0
       this.globalState.viewIDActive           = "presentation"

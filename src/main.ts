@@ -16,10 +16,10 @@ app.mount('#app')
 
 export const mobilMinWidth = 980;
 
-function setIsOpen() {if (window.innerWidth < mobilMinWidth) useGlobalState().isOpen = false}
-setIsOpen()
+// function setIsOpen() {if (window.innerWidth < mobilMinWidth) useGlobalState().isOpen = false}
+// setIsOpen()
 
-window.addEventListener('resize', () => {
-  setIsOpen()
-})
+// window.addEventListener('resize', () => {
+//   setIsOpen()
+// })
 
