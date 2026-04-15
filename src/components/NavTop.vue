@@ -1,40 +1,43 @@
 <template>
   <nav class="v-nav-top font-small">
-    <div
-        class="v-nav-top__list"
-    >
-      <a href="#presentation" :class="{'is-active': isIDActive('presentation')}">Présentation</a>
-      <a href="#fruit"        :class="{'is-active': isIDActive('fruit')}"       >Fruits du verger</a>
-      <a href="#produit"      :class="{'is-active': isIDActive('produit')}"     >Produits fruitiers</a>
-      <a href="#natura"       :class="{'is-active': isIDActive('natura')}"      >Natura-Beef</a>
-      <a href="#miel"         :class="{'is-active': isIDActive('miel')}"        >Miel</a>
-<!--      <a href="#miel"         :class="{'is-active': isIDActive('kk')}"        >Biodiversité</a>-->
+    <div class="v-nav-top__list">
+      <!-- Dynamically render navigation links -->
+      <a
+          v-for="item in navItems"
+          :key="item.id"
+          :href="`#${item.id}`"
+          :class="{ 'is-active': globalState.viewIDActive === item.id }"
+      >
+        {{ item.label }}
+      </a>
     </div>
   </nav>
 </template>
 
-<script lang="ts">
-import {defineComponent} from "vue"
-import {useGlobalState} from "@/stores/globalState";
+<script setup lang="ts">
+import { useGlobalState } from "@/stores/globalState"
 
-export default defineComponent({
+/**
+ * Navigation items to display in the top bar.
+ * id matches the section's ID in Content.vue for auto-highlighting.
+ */
+const navItems = [
+  { id: 'presentation', label: 'Présentation' },
+  { id: 'fruit',        label: 'Fruits du verger' },
+  { id: 'produit',      label: 'Produits fruitiers' },
+  { id: 'natura',       label: 'Natura-Beef' },
+  { id: 'miel',         label: 'Miel' },
+]
 
-  data() {
-    return {
-      globalState: useGlobalState(),
-    }
-  },
-
-  methods: {
-    isIDActive(idName: string): boolean {
-      return idName === this.globalState.$state.viewIDActive
-    },
-  },
-
-
-})</script>
+/**
+ * Access the global store to track the active view ID.
+ */
+const globalState = useGlobalState()
+</script>
 
 <style lang="scss">
+@import "@/assets/parameters";
+
 .v-nav-top {
   box-sizing: border-box;
   padding: var(--m-gutter-xl) var(--m-gutter-xl) 2rem;
@@ -50,7 +53,7 @@ export default defineComponent({
     flex-wrap: nowrap;
     justify-content: space-between;
 
-    @media (max-width: 980px) {
+    @media (max-width: $mobile-breakpoint) {
       flex-wrap: wrap;
       justify-content: center;
       gap: 1rem;
@@ -63,22 +66,8 @@ export default defineComponent({
     }
   }
 
-  @media (max-width: 980px) {
+  @media (max-width: $mobile-breakpoint) {
     padding: 1rem;
-  }
-
-  &.transition-intro-enter-active {
-    transition: opacity .75s .25s ease-in-out, transform .75s .25s ease-in-out;
-  }
-
-  &.transition-intro-leave-active {
-    transition: opacity .75s 0s ease-in-out, transform .75s 0s ease-in-out;
-  }
-
-  &.transition-intro-enter-from,
-  &.transition-intro-leave-to {
-    opacity: 0;
-    transform: translate3d(0, 20px, 0);
   }
 }
 </style>

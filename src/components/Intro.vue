@@ -1,32 +1,24 @@
 <template>
   <div class="v-intro">
+    <!-- Full-screen background image -->
+    <div class="v-intro__bg"></div>
 
-    <div
-        class="v-intro__bg"
-    ></div>
-
+    <!-- Centered intro card -->
     <div
         class="v-intro__card"
-        @click="cardClicked"
+        @click="openMainContent"
         ref="introCard"
     >
-      <div
-          class="v-intro__card__content"
-      >
-        <div
-            class="v-intro__card__content__title m-remove-child-margin"
-        >
+      <div class="v-intro__card__content">
+        <div class="v-intro__card__content__title m-remove-child-margin">
           <h1>
             Martin+Angela Ott
             <br>Montmirail 2
             <br>CH-2075 Thielle
           </h1>
         </div>
-        <div
-            class="v-intro__card__content__text m-remove-child-margin"
-        >
+        <div class="v-intro__card__content__text m-remove-child-margin">
           <p class="font-strong font-small">
-
             PRODUITS BIO DE LA FERME DE MONTMIRAIL
             <br>FRUITS DE SAISON, VIANDE, MIEL ET +
             <br>VENTE DIRECTE SUR RENDEZ-VOUS 079 692 15 18
@@ -34,52 +26,68 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
-<script lang="ts">
-import {defineComponent} from "vue"
-import {useGlobalState} from "@/stores/globalState"
-import {mobilMinWidth} from "@/main"
+<script setup lang="ts">
+import { onMounted, onUnmounted, ref, nextTick } from "vue"
+import { useGlobalState } from "@/stores/globalState"
+import { mobilMinWidth } from "@/main"
 
-export default defineComponent({
+const globalState = useGlobalState()
+const introCard = ref<HTMLElement | null>(null)
 
-  data() {
-    return {
-      globalState: useGlobalState()
-    }
-  },
+/**
+ * Handles the transition from intro screen to main content.
+ */
+const openMainContent = () => {
+  globalState.isOpen = true
+  // Reset scroll and navigation state
+  globalState.galleryScrollPosition = 0
+  globalState.viewIDActive = "presentation"
+  // Clean URL without adding history entry if needed, 
+  // though pushState is used here to match original behavior.
+  window.history.pushState({}, '', '/')
+}
 
-  methods: {
-    cardClicked() {
-      this.globalState.isOpen                 = true
-      this.globalState.galleryScrollPosition  = 0
-      this.globalState.viewIDActive           = "presentation"
-      window.history.pushState({}, '', '/')
-    },
+/**
+ * Adjusts the intro card scale on small screens to ensure it fits.
+ * The card is designed with fixed pixel dimensions (435x275) and 
+ * is scaled down when the screen width is below mobilMinWidth.
+ */
+const resizeCard = () => {
+  if (!introCard.value) return
+  
+  const width = window.innerWidth
+  
+  if (width < mobilMinWidth) {
+    // The divisor (mobilMinWidth - 400 = 580) is likely a 
+    // tuned value to make the card fit nicely.
+    const scale = width / (mobilMinWidth - 400)
+    introCard.value.style.transform = `scale(${scale}) translate(-50%, -50%)`
+    introCard.value.style.transformOrigin = 'top left'
+  } else {
+    // Reset to default CSS transform (translate(-50%, -50%))
+    introCard.value.style.transform = ""
+    introCard.value.style.transformOrigin = ""
+  }
+}
 
-    resizeCard() {
-      if( !(this.$refs.introCard instanceof HTMLElement)) return
-      this.$refs.introCard.style.transformOrigin = 'top left'
-      if( window.innerWidth < mobilMinWidth )
-        this.$refs.introCard.style.transform
-            = `scale(${window.innerWidth / (mobilMinWidth - 400) }) translate(-50%, -50%)`
+onMounted(() => {
+  nextTick(() => {
+    resizeCard()
+    window.addEventListener('resize', resizeCard)
+  })
+})
 
-      else this.$refs.introCard.style.transform = ""
-    },
-  },
-
-  mounted() {
-    this.$nextTick(() => {
-      this.resizeCard()
-      window.addEventListener('resize', this.resizeCard)
-    })
-  },
-
-})</script>
+onUnmounted(() => {
+  window.removeEventListener('resize', resizeCard)
+})
+</script>
 
 <style lang="scss">
+@import "@/assets/parameters";
+
 .v-intro {
   position: relative;
   width: 100%;
@@ -163,7 +171,7 @@ export default defineComponent({
     }
   }
 
-  &.transition-intro-enter-from ,
+  &.transition-intro-enter-from,
   &.transition-intro-leave-to {
     opacity: 0;
 

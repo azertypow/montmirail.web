@@ -1,26 +1,20 @@
 <template>
   <main class="v-content">
-    <div
-        class="v-content__content"
-    >
-      <div
-          class="m-g-container"
-      >
-        <div
-            class="m-g-8-12 m-remove-child-margin"
-        >
+    <div class="v-content__content">
+      <div class="m-g-container">
+        <!-- Main text content column (8/12 grid) -->
+        <div class="m-g-8-12 m-remove-child-margin">
           <div
               class="v-content__content__text-container"
-              @scroll="scrollUpdate"
+              ref="textContainerEl"
+              @scroll="onScroll"
           >
+            <!-- Sections are identified for navigation and auto-font-size adjustment -->
             <section
                 id="presentation"
                 class="v-content__content__text-container__section"
             >
-              <div
-                  ref="textContainer"
-                  class="v-content__content__text-container__section__content"
-              >
+              <div class="v-content__content__text-container__section__content">
                 <p>
                   Installés à Montmirail près de Neuchâtel depuis 2011, nous tenons une exploitation spécialisée dans
                   les grandes cultures (maïs, soja, tournesol, blé d’automne). Attentifs à la qualité des produits ainsi
@@ -43,10 +37,7 @@
                 id="fruit"
                 class="v-content__content__text-container__section"
             >
-              <div
-                  ref="textContainer"
-                  class="v-content__content__text-container__section__content"
-              >
+              <div class="v-content__content__text-container__section__content">
                 <p>
                   Nos vergers produisent une grande variété de fruits : les pommes Rubinette, Idared, Boskoop et Gala
                   ainsi que les poires Beurré Bosc et Conférence. Pour prendre le relais de l’ancien verger, nous en
@@ -66,10 +57,7 @@
                 id="produit"
                 class="v-content__content__text-container__section"
             >
-              <div
-                  ref="textContainer"
-                  class="v-content__content__text-container__section__content"
-              >
+              <div class="v-content__content__text-container__section__content">
                 <p>
                   En plus des fruits frais, nous proposons du <em>jus de pomme</em> et <em>des fruits séchés</em> qui
                   permettent de déguster tout au long de l’année notre production estivale et automnale. Afin d’utiliser les fruits
@@ -83,10 +71,7 @@
                 id="natura"
                 class="v-content__content__text-container__section"
             >
-              <div
-                  ref="textContainer"
-                  class="v-content__content__text-container__section__content"
-              >
+              <div class="v-content__content__text-container__section__content">
                 <p>
                   Parce que nous aimons la viande et qu’il est important pour nous d’en connaître la provenance ainsi
                   que de prodiguer un élevage respectueux des animaux, nos vaches sont élevées d’après les normes du
@@ -96,7 +81,12 @@
                   de lait maternel et de fourrages grossiers. Le&nbsp;troupeau pâture sur nos propres prés et passe l’hiver en stabulation libre.
                   Les vaches et les veaux sont en compagnie de leur taureau.
                 </p>
-                <div style="margin-top: 1rem" ><a href="/ferme_montmirail_naturabeef_2025.pdf" target="_blank" class="m-link-with-img"><span>La liste des prix est par ici </span><img src="../assets/fleche.svg" alt="fleche"></a></div>
+                <div style="margin-top: 1rem">
+                  <a href="/ferme_montmirail_naturabeef_2025.pdf" target="_blank" class="m-link-with-img">
+                    <span>La liste des prix est par ici </span>
+                    <img src="../assets/fleche.svg" alt="fleche">
+                  </a>
+                </div>
               </div>
             </section>
 
@@ -104,10 +94,7 @@
                 id="miel"
                 class="v-content__content__text-container__section"
             >
-              <div
-                  ref="textContainer"
-                  class="v-content__content__text-container__section__content"
-              >
+              <div class="v-content__content__text-container__section__content">
                 <p>
                   Depuis 2018, Angela s’occupe également de quelques colonies d’abeilles qui contribuent à la pollinisation des arbres fruitiers et d’autres cultures en fleurs aux alentours de notre ferme. Nous récoltons le miel de printemps de fin mai à début juin et le miel d’été vers la mi-juillet. À travers ses saveurs, le miel reflète l’offre florale du moment (et la météo) dans toute sa diversité.
                 </p>
@@ -115,33 +102,29 @@
             </section>
           </div>
         </div>
-        <div
-            class="m-g-4-12"
-        >
-          <div
-              class="v-content__content__img-container"
-          >
+
+        <!-- Image gallery column (4/12 grid) -->
+        <div class="m-g-4-12">
+          <div class="v-content__content__img-container">
             <div
+                ref="imgGalleryEl"
                 :style="{
-                  transform: `translate3D(0, ${globalState.$state.galleryScrollPosition}px, 0)`,
+                  transform: `translate3D(0, ${globalState.galleryScrollPosition}px, 0)`,
                 }"
             >
+              <!-- Gallery of 15 images scrolling in sync with text content -->
               <img src="/1_1.jpg" alt="image">
               <img src="/1_2.jpg" alt="image">
               <img src="/1_3.jpg" alt="image">
-
               <img src="/02.jpg" alt="image">
               <img src="/01.jpg" alt="image">
               <img src="/00.jpg" alt="image">
-
               <img src="/05.jpg" alt="image">
               <img src="/04.jpg" alt="image">
               <img src="/03.jpg" alt="image">
-
               <img src="/08.jpg" alt="image">
               <img src="/07.jpg" alt="image">
               <img src="/06.jpg" alt="image">
-
               <img src="/09.jpg" alt="image">
               <img src="/10.jpg" alt="image">
               <img src="/11.jpg" alt="image">
@@ -153,88 +136,114 @@
   </main>
 </template>
 
-<script lang="ts">
-import {defineComponent} from "vue"
-import NavTop from "@/components/NavTop.vue"
-import {useGlobalState} from "@/stores/globalState"
+<script setup lang="ts">
+import { onMounted, onUnmounted, ref, nextTick } from "vue"
+import { useGlobalState } from "@/stores/globalState"
 
-export default defineComponent({
-  components: {NavTop},
+const globalState = useGlobalState()
 
-  data() {
-    return {
-      globalState: useGlobalState()
-    }
-  },
+// Template refs
+const textContainerEl = ref<HTMLElement | null>(null)
+const imgGalleryEl = ref<HTMLElement | null>(null)
 
-  mounted() {
-    this.$nextTick(() => {
+/**
+ * Automatically adjusts font-size if the text content overflows its viewport.
+ * This ensures all text is visible on different screen sizes and aspect ratios.
+ */
+const autoAdjustFontSize = () => {
+  requestAnimationFrame(() => {
+    if (!textContainerEl.value) return
 
-      const runSetFontSize = async () => {
+    const textViewHeight = textContainerEl.value.getBoundingClientRect().height
+    const sections = textContainerEl.value.querySelectorAll('.v-content__content__text-container__section')
 
-        requestAnimationFrame(() => {
-          if (!(this.$el instanceof HTMLElement)) return
-
-          let textContentIsBiggerThanParent = false
-          const textViewHeight = this.$el.querySelector('.v-content__content__text-container')?.getBoundingClientRect().height || null
-
-          if (textViewHeight == null) return
-
-          this.$el.querySelectorAll('.v-content__content__text-container__section').forEach((element: any) => {
-            if (!(element instanceof HTMLElement)) return
-            if (element.getBoundingClientRect().height > textViewHeight) textContentIsBiggerThanParent = true
-          })
-
-          if (!textContentIsBiggerThanParent) return
-
-          const pElement = this.$el.querySelectorAll('.v-content__content__text-container__section__content *')
-
-          if (textContentIsBiggerThanParent) for (const p of pElement) {
-            if (!(p instanceof HTMLElement)) return
-            p.style.lineHeight = '1.3em'
-            p.style.fontSize = parseFloat(window.getComputedStyle(p).fontSize) - .01 + 'px'
-            runSetFontSize()
-          }
-        })
+    let needsAdjustment = false
+    sections.forEach((section: any) => {
+      // If a single section is taller than the container, we shrink everything
+      if (section.scrollHeight > textViewHeight) {
+        needsAdjustment = true
       }
-      runSetFontSize().then(() => {
-        console.log('ended')
-      })
     })
-  },
 
-  methods: {
-    scrollUpdate(e: Event): void {
-      if(!(e.target instanceof HTMLElement) ) return
-
-      const elementsWithID = e.target.querySelectorAll("[id]")
-
-      for(const element of elementsWithID) {
-        if(
-            element.getBoundingClientRect().top > 0
-            && element.getBoundingClientRect().top < window.innerHeight / 2
-        ) this.globalState.$state.viewIDActive = element.id
-      }
-
-      const contentImageContainer = document.querySelector('.v-content__content__img-container > div')
-
-      if( contentImageContainer === null ) return
-
-      const heightTotal = e.target.scrollHeight - e.target.getBoundingClientRect().height
-      const scrollTop   = e.target.scrollTop
-      const contentScrollPercent = Math.round( 100 / heightTotal * scrollTop )
-      const totalScrollHeight =
-          contentImageContainer.getBoundingClientRect().height
-          - window.innerHeight
-          + 40
-
-      this.globalState.$state.galleryScrollPosition = totalScrollHeight / 100 * contentScrollPercent
+    if (needsAdjustment) {
+      const contentElements = textContainerEl.value.querySelectorAll('.v-content__content__text-container__section__content *')
+      contentElements.forEach((el: any) => {
+        if (el instanceof HTMLElement) {
+          const currentSize = parseFloat(window.getComputedStyle(el).fontSize)
+          el.style.lineHeight = '1.3em'
+          // Recursively decrease font-size until it fits
+          el.style.fontSize = (currentSize - 0.1) + 'px'
+        }
+      })
+      autoAdjustFontSize()
     }
+  })
+}
+
+/**
+ * Updates the gallery scroll position based on the text scroll progress.
+ * The gallery moves at a different speed to cover its entire height.
+ */
+const updateGalleryPosition = (target: HTMLElement) => {
+  if (!imgGalleryEl.value) return
+
+  const heightTotal = target.scrollHeight - target.getBoundingClientRect().height
+  const scrollTop = target.scrollTop
+  const scrollPercent = (scrollTop / heightTotal) * 100
+
+  // Total height available to scroll in the gallery
+  const galleryHeight = imgGalleryEl.value.getBoundingClientRect().height
+  const totalScrollHeight = galleryHeight - window.innerHeight + 40
+  
+  globalState.galleryScrollPosition = (totalScrollHeight / 100) * scrollPercent
+}
+
+/**
+ * IntersectionObserver to detect which section is currently centered in view.
+ * This is more efficient and reliable than manual scroll calculations.
+ */
+let sectionObserver: IntersectionObserver | null = null
+
+const setupSectionObserver = () => {
+  const options = {
+    root: textContainerEl.value,
+    rootMargin: '-20% 0px -20% 0px', // Trigger when section is roughly in the middle 60% of view
+    threshold: 0.1
   }
 
-})</script>
+  sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        globalState.viewIDActive = entry.target.id
+      }
+    })
+  }, options)
+
+  const sections = textContainerEl.value?.querySelectorAll('.v-content__content__text-container__section')
+  sections?.forEach(section => sectionObserver?.observe(section))
+}
+
+const onScroll = (e: Event) => {
+  if (e.target instanceof HTMLElement) {
+    updateGalleryPosition(e.target)
+  }
+}
+
+onMounted(() => {
+  nextTick(() => {
+    autoAdjustFontSize()
+    setupSectionObserver()
+  })
+})
+
+onUnmounted(() => {
+  sectionObserver?.disconnect()
+})
+</script>
 
 <style lang="scss">
+@import "@/assets/parameters";
+
 .v-content {
   background-image: url("/web_frame.jpeg");
   background-size: auto 100%;
@@ -267,7 +276,7 @@ export default defineComponent({
     height: 100%;
     position: relative;
 
-    @media (max-width: 980px) {
+    @media (max-width: $mobile-breakpoint) {
       display: none;
     }
 
@@ -312,7 +321,7 @@ export default defineComponent({
     padding-left:   var(--m-gutter-xl);
     padding-right:  var(--m-gutter-xl);
 
-    @media (max-width: 980px) {
+    @media (max-width: $mobile-breakpoint) {
       padding-left: var(--m-gutter);
       padding-right: var(--m-gutter);
       padding-top: 14rem;
@@ -335,16 +344,6 @@ export default defineComponent({
     p + p {
       text-indent: 4rem;
     }
-  }
-
-  &.transition-intro-enter-active,
-  &.transition-intro-leave-active {
-    //transition: opacity .5s .5s ease-in-out;
-  }
-
-  &.transition-intro-enter-from,
-  &.transition-intro-leave-to {
-    //opacity: 0;
   }
 }
 </style>
