@@ -80,7 +80,7 @@ const goToIntro = () => {
 
     @media (max-width: $mobile-breakpoint) {
       left: 50%;
-      width: calc(100% - var(--m-gutter) * 2);
+      //width: calc(100% - var(--m-gutter) * 2);
       white-space: normal;
     }
   }
@@ -90,7 +90,7 @@ const goToIntro = () => {
     transform-origin: center center;
 
     @media (max-width: $mobile-breakpoint) {
-      top: var(--m-gutter);
+      //top: var(--m-gutter);
       text-align: center;
     }
   }
@@ -118,8 +118,9 @@ const goToIntro = () => {
     }
 
     @media (max-width: $mobile-breakpoint) {
-      bottom: 0;
-      width: 100%;
+      bottom: var(--m-gutter);
+      //width: 100%;
+      width: calc(100% - var(--m-gutter) * 2);
     }
   }
 
@@ -131,9 +132,9 @@ const goToIntro = () => {
     width: calc( (100% - var(--m-gutter) * 2) / 12 * 8);
 
     @media (max-width: $mobile-breakpoint) {
-      top: 6rem;
-      left: 0;
-      width: 100%;
+      //top: 6rem;
+      //left: 0;
+      width: calc(100% - var(--m-gutter) * 2);
     }
   }
 }

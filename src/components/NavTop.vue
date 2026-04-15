@@ -54,9 +54,9 @@ const globalState = useGlobalState()
     justify-content: space-between;
 
     @media (max-width: $mobile-breakpoint) {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
+      //flex-wrap: wrap;
+      //justify-content: center;
+      //gap: 1rem;
     }
 
     a {
@@ -67,7 +67,7 @@ const globalState = useGlobalState()
   }
 
   @media (max-width: $mobile-breakpoint) {
-    padding: 1rem;
+    //padding: 1rem;
   }
 }
 </style>
