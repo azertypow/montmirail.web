@@ -174,6 +174,7 @@ onUnmounted(() => {
   &.transition-intro-enter-from,
   &.transition-intro-leave-to {
     opacity: 0;
+    transform: none;
 
     .v-intro__card {
       width: 100%;

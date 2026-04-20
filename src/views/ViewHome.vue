@@ -64,6 +64,9 @@ const goToIntro = () => {
   position: relative;
   width: 100%;
   height: 100%;
+  background-image: url('/09.jpg');
+  background-size: cover;
+  background-position: center;
 
   .v-view-home__tagline-top,
   .v-view-home__tagline-bottom {
