@@ -149,6 +149,11 @@ const goToIntro = () => {
   &.v-view-home__tagline-bottom {
     transition: opacity .5s .75s ease-in-out, transform .5s .75s ease-in-out;
   }
+
+  &.v-nav-top {
+    background: transparent !important;
+    transition: opacity .75s .25s ease-in-out, transform .75s .25s ease-in-out, background .75s .25s ease-in-out;
+  }
 }
 
 .transition-intro-leave-active {
@@ -157,6 +162,11 @@ const goToIntro = () => {
   &.v-view-home__tagline-top,
   &.v-view-home__tagline-bottom {
     transition: opacity .5s 0s ease-in-out, transform .5s 0s ease-in-out;
+  }
+
+  &.v-nav-top {
+    background: transparent !important;
+    transition: opacity .75s 0s ease-in-out, transform .75s 0s ease-in-out, background .75s 0s ease-in-out;
   }
 }
 

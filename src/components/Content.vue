@@ -18,9 +18,18 @@
                 <template v-if="presentation">
                   <p v-for="(block, index) in presentation.text_content" :key="index">
                     <template v-for="(child, childIndex) in block.children" :key="childIndex">
-                      <em v-if="child.bold">{{ child.text }}</em>
-                      <i v-else-if="child.underline">{{ child.text }}</i>
-                      <template v-else>{{ child.text }}</template>
+                      <a v-if="child.type === 'link'" :href="child.url" target="_blank">
+                        <template v-for="(linkChild, linkChildIndex) in child.children" :key="linkChildIndex">
+                          <em v-if="linkChild.bold">{{ linkChild.text }}</em>
+                          <i v-else-if="linkChild.underline">{{ linkChild.text }}</i>
+                          <template v-else>{{ linkChild.text }}</template>
+                        </template>
+                      </a>
+                      <template v-else>
+                        <em v-if="child.bold">{{ child.text }}</em>
+                        <i v-else-if="child.underline">{{ child.text }}</i>
+                        <template v-else>{{ child.text }}</template>
+                      </template>
                     </template>
                   </p>
                 </template>
@@ -52,9 +61,18 @@
                 <template v-if="fruit">
                   <p v-for="(block, index) in fruit.text_content" :key="index">
                     <template v-for="(child, childIndex) in block.children" :key="childIndex">
-                      <em v-if="child.bold">{{ child.text }}</em>
-                      <i v-else-if="child.underline">{{ child.text }}</i>
-                      <template v-else>{{ child.text }}</template>
+                      <a v-if="child.type === 'link'" :href="child.url" target="_blank">
+                        <template v-for="(linkChild, linkChildIndex) in child.children" :key="linkChildIndex">
+                          <em v-if="linkChild.bold">{{ linkChild.text }}</em>
+                          <i v-else-if="linkChild.underline">{{ linkChild.text }}</i>
+                          <template v-else>{{ linkChild.text }}</template>
+                        </template>
+                      </a>
+                      <template v-else>
+                        <em v-if="child.bold">{{ child.text }}</em>
+                        <i v-else-if="child.underline">{{ child.text }}</i>
+                        <template v-else>{{ child.text }}</template>
+                      </template>
                     </template>
                   </p>
                 </template>
@@ -83,9 +101,18 @@
                 <template v-if="produit">
                   <p v-for="(block, index) in produit.text_content" :key="index">
                     <template v-for="(child, childIndex) in block.children" :key="childIndex">
-                      <em v-if="child.bold">{{ child.text }}</em>
-                      <i v-else-if="child.underline">{{ child.text }}</i>
-                      <template v-else>{{ child.text }}</template>
+                      <a v-if="child.type === 'link'" :href="child.url" target="_blank">
+                        <template v-for="(linkChild, linkChildIndex) in child.children" :key="linkChildIndex">
+                          <em v-if="linkChild.bold">{{ linkChild.text }}</em>
+                          <i v-else-if="linkChild.underline">{{ linkChild.text }}</i>
+                          <template v-else>{{ linkChild.text }}</template>
+                        </template>
+                      </a>
+                      <template v-else>
+                        <em v-if="child.bold">{{ child.text }}</em>
+                        <i v-else-if="child.underline">{{ child.text }}</i>
+                        <template v-else>{{ child.text }}</template>
+                      </template>
                     </template>
                   </p>
                 </template>
@@ -108,9 +135,18 @@
                 <template v-if="natura">
                   <p v-for="(block, index) in natura.text_content" :key="index">
                     <template v-for="(child, childIndex) in block.children" :key="childIndex">
-                      <em v-if="child.bold">{{ child.text }}</em>
-                      <i v-else-if="child.underline">{{ child.text }}</i>
-                      <template v-else>{{ child.text }}</template>
+                      <a v-if="child.type === 'link'" :href="child.url" target="_blank">
+                        <template v-for="(linkChild, linkChildIndex) in child.children" :key="linkChildIndex">
+                          <em v-if="linkChild.bold">{{ linkChild.text }}</em>
+                          <i v-else-if="linkChild.underline">{{ linkChild.text }}</i>
+                          <template v-else>{{ linkChild.text }}</template>
+                        </template>
+                      </a>
+                      <template v-else>
+                        <em v-if="child.bold">{{ child.text }}</em>
+                        <i v-else-if="child.underline">{{ child.text }}</i>
+                        <template v-else>{{ child.text }}</template>
+                      </template>
                     </template>
                   </p>
                 </template>
@@ -142,9 +178,18 @@
                 <template v-if="miel">
                   <p v-for="(block, index) in miel.text_content" :key="index">
                     <template v-for="(child, childIndex) in block.children" :key="childIndex">
-                      <em v-if="child.bold">{{ child.text }}</em>
-                      <i v-else-if="child.underline">{{ child.text }}</i>
-                      <template v-else>{{ child.text }}</template>
+                      <a v-if="child.type === 'link'" :href="child.url" target="_blank">
+                        <template v-for="(linkChild, linkChildIndex) in child.children" :key="linkChildIndex">
+                          <em v-if="linkChild.bold">{{ linkChild.text }}</em>
+                          <i v-else-if="linkChild.underline">{{ linkChild.text }}</i>
+                          <template v-else>{{ linkChild.text }}</template>
+                        </template>
+                      </a>
+                      <template v-else>
+                        <em v-if="child.bold">{{ child.text }}</em>
+                        <i v-else-if="child.underline">{{ child.text }}</i>
+                        <template v-else>{{ child.text }}</template>
+                      </template>
                     </template>
                   </p>
                 </template>

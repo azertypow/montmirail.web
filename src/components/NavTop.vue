@@ -41,8 +41,7 @@ const globalState = useGlobalState()
 .v-nav-top {
   box-sizing: border-box;
   padding: var(--m-gutter-xl) var(--m-gutter-xl) 2rem;
-  //background: var(--m-color-light);
-  background: transparent;
+  background: var(--m-color-light);
   a {
     color: inherit;
     text-decoration: none;
