@@ -55,7 +55,9 @@ const globalState = useGlobalState()
     @media (max-width: $mobile-breakpoint) {
       //flex-wrap: wrap;
       //justify-content: center;
+      flex-direction: column;
       gap: 1rem;
+      line-height: 0.8rem;
     }
 
     a {
@@ -66,7 +68,7 @@ const globalState = useGlobalState()
   }
 
   @media (max-width: $mobile-breakpoint) {
-    //padding: 1rem;
+    padding: 1rem;
   }
 }
 </style>

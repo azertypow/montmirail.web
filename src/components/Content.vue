@@ -278,7 +278,7 @@ const autoAdjustFontSize = () => {
     contentElements.forEach((el: any) => {
       if (el instanceof HTMLElement) {
         const currentSize = parseFloat(window.getComputedStyle(el).fontSize)
-        if (currentSize > 12) { // Minimum font size 12px
+        if (currentSize > 10) { // Minimum font size 12px
           el.style.lineHeight = '1.3em'
           el.style.fontSize = (currentSize - 0.2) + 'px'
           canStillShrink = true

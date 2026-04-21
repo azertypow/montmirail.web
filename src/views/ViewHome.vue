@@ -93,7 +93,7 @@ const goToIntro = () => {
     transform-origin: center center;
 
     @media (max-width: $mobile-breakpoint) {
-      //top: var(--m-gutter);
+      top: calc(1rem + var(--m-gutter));
       text-align: center;
     }
   }
@@ -108,7 +108,7 @@ const goToIntro = () => {
 
     .v-view-home__tagline-bottom__logo {
       display: block;
-      height: 5rem;
+      height: calc(var(--m-gutter) * 3);
       width: auto;
       position: absolute;
       right: 0;
@@ -117,12 +117,14 @@ const goToIntro = () => {
       @media (max-width: $mobile-breakpoint) {
         position: static;
         margin: 1rem auto 0;
+        padding-bottom: calc(var(--m-gutter)/2);
       }
     }
 
     @media (max-width: $mobile-breakpoint) {
       bottom: var(--m-gutter);
-      //width: 100%;
+      padding-top: 0;
+      padding-bottom: calc(var(--m-gutter)/2);
       width: calc(100% - var(--m-gutter) * 2);
     }
   }
@@ -135,9 +137,9 @@ const goToIntro = () => {
     width: calc( (100% - var(--m-gutter) * 2) / 12 * 8);
 
     @media (max-width: $mobile-breakpoint) {
-      //top: 6rem;
-      //left: 0;
+      padding-top: calc(6rem - var(--m-gutter));
       width: calc(100% - var(--m-gutter) * 2);
+      left: var(--m-gutter);
     }
   }
 }
