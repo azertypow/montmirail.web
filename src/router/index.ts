@@ -4,6 +4,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      // path: '/montmirail.web/',
       path: '/',
       name: 'home',
       component: () => import('../views/ViewHome.vue')
