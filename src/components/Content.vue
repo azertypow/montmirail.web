@@ -157,7 +157,7 @@
                   </p>
                 </template>
                 <div style="margin-top: 1rem">
-                  <a v-if="liste_prix" :href="apiUrl + liste_prix" target="_blank" class="m-link-with-img">
+                  <a v-if="liste_prix" :href="liste_prix" target="_blank" class="m-link-with-img">
                     <span>La liste des prix est par ici </span>
                     <img src="../assets/fleche.svg" alt="fleche">
                   </a>
