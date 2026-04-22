@@ -117,7 +117,7 @@
                   </p>
                 </template>
                 <template v-else>
-               
+
                 </template>
               </div>
             </section>
@@ -147,12 +147,12 @@
                 </template>
                 <template v-else>
                   <p>
-                    Parce que nous aimons la viande et qu’il est important pour nous d’en connaître la provenance ainsi
-                    que de prodiguer un élevage respectueux des animaux, nos vaches sont élevées d’après les normes du
+                    Parce que nous aimons la viande et qu'il est important pour nous d’en connaître la provenance ainsi
+                    que de prodiguer un élevage respectueux des animaux, nos vaches sont élevées d'après les normes du
                     label Natura-Beef (voir <a href="https://www.mutterkuh.ch/fr/natura-beef" target="_blank">mutterkuh.ch</a>).
                     La viande provient de jeunes bêtes qui grandissent dans des élevages de vaches mères. Les veaux sont
                     allaités et restent près de leurs mères jusqu’à l’âge de 10 mois. Leur nutrition se compose essentiellement
-                    de lait maternel et de fourrages grossiers. Le&nbsp;troupeau pâture sur nos propres prés et passe l’hiver en stabulation libre.
+                    de lait maternel et de fourrages grossiers. Le troupeau pâture sur nos propres prés et passe l'hiver en stabulation libre.
                     Les vaches et les veaux sont en compagnie de leur taureau.
                   </p>
                 </template>
@@ -370,6 +370,7 @@ onMounted(async () => {
     miel.value = resMiel.data
     presentation.value = resPresentation.data
     fruit.value = resFruit.data
+    natura_prices.value = resNaturaPrices.data
 
     window.addEventListener('resize', onResize)
 
