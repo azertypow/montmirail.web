@@ -68,7 +68,7 @@ const globalState = useGlobalState()
   }
 
   @media (max-width: $mobile-breakpoint) {
-    padding: 1rem;
+    padding: var(--m-gutter);
   }
 }
 </style>
