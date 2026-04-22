@@ -117,12 +117,7 @@
                   </p>
                 </template>
                 <template v-else>
-                  <p>
-                    En plus des fruits frais, nous proposons du <em>jus de pomme</em> et <em>des fruits séchés</em> qui
-                    permettent de déguster tout au long de l’année notre production estivale et automnale. Afin d’utiliser les fruits
-                    mûrs invendus, nous nous sommes aussi mis à produire de <em>l’eau-de-vie</em> en petite quantité,
-                    disponible actuellement en trois sortes différentes : Pomme Rubinette, Pruneau Fellenberg et Poire.
-                  </p>
+               
                 </template>
               </div>
             </section>
@@ -258,8 +253,15 @@ const imgGalleryEl = ref<HTMLElement | null>(null)
  * Automatically adjusts font-size if the text content overflows its viewport.
  * This ensures all text is visible on different screen sizes and aspect ratios.
  */
+let adjustIterations = 0
+
+const resetAdjustIterations = () => {adjustIterations = 0}
+
 const autoAdjustFontSize = () => {
-  if (!textContainerEl.value) return
+  const MIN_FONT_SIZE = 12
+  const MAX_ITER = 200
+
+  if (!textContainerEl.value || adjustIterations++ > MAX_ITER) return
 
   const textViewHeight = textContainerEl.value.getBoundingClientRect().height
   const sections = textContainerEl.value.querySelectorAll('.v-content__content__text-container__section')
@@ -278,14 +280,14 @@ const autoAdjustFontSize = () => {
     contentElements.forEach((el: any) => {
       if (el instanceof HTMLElement) {
         const currentSize = parseFloat(window.getComputedStyle(el).fontSize)
-        if (currentSize > 10) { // Minimum font size 12px
+        if (currentSize > MIN_FONT_SIZE) {
           el.style.lineHeight = '1.3em'
           el.style.fontSize = (currentSize - 0.2) + 'px'
           canStillShrink = true
         }
       }
     })
-    
+
     if (canStillShrink) {
       requestAnimationFrame(autoAdjustFontSize)
     }
@@ -300,13 +302,15 @@ const updateGalleryPosition = (target: HTMLElement) => {
   if (!imgGalleryEl.value) return
 
   const heightTotal = target.scrollHeight - target.getBoundingClientRect().height
+  if (heightTotal <= 0) return
   const scrollTop = target.scrollTop
   const scrollPercent = (scrollTop / heightTotal) * 100
 
   // Total height available to scroll in the gallery
   const galleryHeight = imgGalleryEl.value.getBoundingClientRect().height
   const totalScrollHeight = galleryHeight - window.innerHeight + 40
-  
+  if (totalScrollHeight <= 0) return
+
   globalState.galleryScrollPosition = (totalScrollHeight / 100) * scrollPercent
 }
 
@@ -341,6 +345,11 @@ const onScroll = (e: Event) => {
   }
 }
 
+const onResize = () => {
+  resetAdjustIterations()
+  autoAdjustFontSize()
+}
+
 onMounted(async () => {
   try {
     const [
@@ -361,19 +370,24 @@ onMounted(async () => {
     miel.value = resMiel.data
     presentation.value = resPresentation.data
     fruit.value = resFruit.data
+
+    window.addEventListener('resize', onResize)
+
+    await nextTick()
+    autoAdjustFontSize()
+    setupSectionObserver()
+
   } catch (error) {
     console.error("Failed to fetch content:", error)
   }
 
-  nextTick(() => {
-    autoAdjustFontSize()
-    setupSectionObserver()
-  })
 })
 
 onUnmounted(() => {
   sectionObserver?.disconnect()
+  window.removeEventListener('resize', onResize)
 })
+
 </script>
 
 <style lang="scss">
