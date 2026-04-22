@@ -23,5 +23,5 @@ export const getProduit = () => api.get('/produit')
 export const getNatura = () => api.get('/natura')
 export const getMiel = () => api.get('/miel')
 export const getPresentation = () => api.get('/presentation')
-
+export const getListePrix = () => api.get('/upload/files')
 

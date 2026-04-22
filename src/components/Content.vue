@@ -157,7 +157,7 @@
                   </p>
                 </template>
                 <div style="margin-top: 1rem">
-                  <a href="/ferme_montmirail_naturabeef_2025.pdf" target="_blank" class="m-link-with-img">
+                  <a href="{{VITE_API_URL}}/uploads/ferme_montmirail_naturabeef_2025_12e76d5265.pdf" target="_blank" class="m-link-with-img">
                     <span>La liste des prix est par ici </span>
                     <img src="../assets/fleche.svg" alt="fleche">
                   </a>
@@ -234,7 +234,7 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref, nextTick } from "vue"
 import { useGlobalState } from "@/stores/globalState"
-import { getMiel, getFruit, getNatura, getProduit, getPresentation } from "@/services/api";
+import { getMiel, getFruit, getNatura, getProduit, getPresentation, getListePrix } from "@/services/api";
 
 const globalState = useGlobalState()
 
@@ -244,6 +244,7 @@ const fruit = ref<any>(null)
 const produit = ref<any>(null)
 const natura = ref<any>(null)
 const miel = ref<any>(null)
+const liste_prix = ref<any>(null)
 
 // Template refs
 const textContainerEl = ref<HTMLElement | null>(null)
@@ -357,21 +358,22 @@ onMounted(async () => {
       { data: resNatura },
       { data: resMiel },
       { data: resPresentation },
-      { data: resFruit }
+      { data: resFruit },
+      { data: resListePrix }
     ] = await Promise.all([
       getProduit(),
       getNatura(),
       getMiel(),
       getPresentation(),
-      getFruit()
+      getFruit(),
+      getListePrix()
     ])
     produit.value = resProduit.data
     natura.value = resNatura.data
     miel.value = resMiel.data
     presentation.value = resPresentation.data
     fruit.value = resFruit.data
-    natura_prices.value = resNaturaPrices.data
-
+    liste_prix.value = resListePrix[0].url
     window.addEventListener('resize', onResize)
 
     await nextTick()
