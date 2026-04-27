@@ -10,12 +10,12 @@
       >PRODUITS DE LA FERME DE MONTMIRAIL</div>
     </transition>
 
-    <!-- Navigation: Visible when content is open -->
+    <!-- Navigation: Visible when content is open and NOT loading -->
     <transition name="transition-intro">
-      <NavTop v-if="globalState.isOpen"></NavTop>
+      <NavTop v-if="globalState.isOpen && !globalState.isLoading"></NavTop>
     </transition>
 
-    <!-- Main Content: Visible when open -->
+    <!-- Main Content: Visible when open and NOT loading -->
     <transition name="transition-intro">
       <Content v-if="globalState.isOpen"></Content>
     </transition>
@@ -145,16 +145,16 @@ const goToIntro = () => {
 }
 
 .transition-intro-enter-active {
-  transition: opacity .75s .25s ease-in-out, transform .75s .25s ease-in-out;
+  transition: opacity 1s .25s ease-in-out, transform 1s .25s ease-in-out;
 
   &.v-view-home__tagline-top,
   &.v-view-home__tagline-bottom {
-    transition: opacity .5s .75s ease-in-out, transform .5s .75s ease-in-out;
+    transition: opacity .75s .75s ease-in-out, transform .75s .75s ease-in-out;
   }
 
   &.v-nav-top {
     background: transparent !important;
-    transition: opacity .75s .25s ease-in-out, transform .75s .25s ease-in-out, background .75s .25s ease-in-out;
+    transition: opacity 1s .25s ease-in-out, transform 1s .25s ease-in-out, background 1s .25s ease-in-out;
   }
 }
 

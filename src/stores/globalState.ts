@@ -18,6 +18,11 @@ export const useGlobalState = defineStore('globalState', {
     galleryScrollPosition: 0,
 
     /**
+     * Indicates if the application is currently fetching initial data from the API.
+     */
+    isLoading: false,
+
+    /**
      * ID of the currently active/visible section in the Content view.
      * Used by NavTop to highlight the current navigation item.
      */

@@ -1,5 +1,5 @@
 <template>
-  <main class="v-content">
+  <main class="v-content" :class="{'is-loading': globalState.isLoading}">
     <div class="v-content__content">
       <div class="m-g-container">
         <!-- Main text content column (8/12 grid) -->
@@ -353,6 +353,7 @@ const onResize = () => {
 }
 
 onMounted(async () => {
+  globalState.isLoading = true
   try {
     const [
       { data: resProduit },
@@ -378,14 +379,14 @@ onMounted(async () => {
 
     window.addEventListener('resize', onResize)
 
+  } catch (error) {
+    console.error("Failed to fetch content:", error)
+  } finally {
+    globalState.isLoading = false
     await nextTick()
     autoAdjustFontSize()
     setupSectionObserver()
-
-  } catch (error) {
-    console.error("Failed to fetch content:", error)
   }
-
 })
 
 onUnmounted(() => {
@@ -399,6 +400,10 @@ onUnmounted(() => {
 @import "@/assets/parameters";
 
 .v-content {
+  &.is-loading {
+    opacity: 0;
+  }
+  transition: opacity .75s ease-in-out;
   background-image: url("/web_frame.jpeg");
   background-size: auto 100%;
   background-position: center;

@@ -40,7 +40,8 @@ const introCard = ref<HTMLElement | null>(null)
 /**
  * Handles the transition from intro screen to main content.
  */
-const openMainContent = () => {
+const openMainContent = async () => {
+  globalState.isLoading = true
   globalState.isOpen = true
   // Reset scroll and navigation state
   globalState.galleryScrollPosition = 0
@@ -159,10 +160,10 @@ onUnmounted(() => {
 
   &.transition-intro-enter-active,
   &.transition-intro-leave-active {
-    transition: opacity .5s .5s ease-in-out;
+    transition: opacity .75s .5s ease-in-out;
 
     .v-intro__card {
-      transition: width .5s ease-in-out, height .5s ease-in-out;
+      transition: width .75s ease-in-out, height .75s ease-in-out;
     }
 
     .v-intro__card__content__text,
