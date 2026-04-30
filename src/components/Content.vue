@@ -117,7 +117,7 @@
                   </p>
                 </template>
                 <template v-else>
-
+                  En plus des fruits frais, nous proposons du jus de pomme et des fruits séchés qui permettent de déguster tout au long de l’année notre production estivale et automnale. Afin d’utiliser les fruits mûrs invendus, nous nous sommes aussi mis à produire de l’eau-de-vie en petite quantité, disponible actuellement en deux sortes différentes : Pomme Rubinette et Poire.
                 </template>
               </div>
             </section>
